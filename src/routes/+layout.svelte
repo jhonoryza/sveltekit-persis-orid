@@ -2,4 +2,6 @@
 	import '../app.postcss';
 </script>
 
-<slot />
+<main class="font-quicksand font-semibold">
+	<slot />
+</main>
