@@ -39,13 +39,14 @@
 <svelte:window on:scroll={loadMore}/>
 
 <section>
-	<div class="flex flex-wrap justify-center">
+	<div class="flex flex-row flex-wrap justify-center">
 		{#each $posts as post}
 			<!-- svelte-ignore a11y-no-static-element-interactions -->
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
-			<div class="mt-12 mx-12 rounded-xl shadow overflow-hidden border border-slate-200 w-3/12 hover:cursor-pointer" on:click={() => openDetailPage(post)}>
-				<img src={post.thumbnail} class="w-full h-64" alt="" />
-				<p class="text-2xl m-2">{post.title}</p>
+			<div class="m-2 rounded-xl shadow-xl overflow-hidden border border-slate-200 w-96 hover:cursor-pointer" on:click={() => openDetailPage(post)}>
+				<img src={post.thumbnail} class="lg:w-auto md:w-auto w-full h-64" alt="" />
+				<p class="text-2xl m-2 font-bold">{post.title}</p>
+				<p class="text-sm m-2">published {post.publishedAt}</p>
 				<p class="text-sm m-2">{post.summary || ''}</p>
 			</div>
 		{/each}
